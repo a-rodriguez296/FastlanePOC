@@ -1,10 +1,6 @@
-# Customise this file, documentation can be found here:
-# https://github.com/fastlane/fastlane/tree/master/docs
-# All available actions: https://github.com/fastlane/fastlane/blob/master/docs/Actions.md
-# can also be listed using the `fastlane actions` command
 
-# Change the syntax highlighting to Ruby
-# All lines starting with a # are ignored when running `fastlane`
+
+
 
 # By default, fastlane will send which actions are used
 # No personal data is shared, more information on https://github.com/fastlane/enhancer
@@ -12,7 +8,7 @@
 # opt_out_usage
 
 # If you want to automatically update fastlane if a new version is available:
-# update_fastlane
+#update_fastlane
 
 # This is the minimum version number required.
 # Update this, if you use features of a newer version
@@ -27,9 +23,28 @@ platform :ios do
     
   end
 
+  desc "Generate IPA”
+  lane :generatePP do
+    match(git_url: "https://a-rodriguez296@bitbucket.org/a-rodriguez296/pruebamatch.git", 
+      type: "appstore",
+      app_identifier: "com.arf.poker",
+      readonly: true)
+       gym(clean: true)
+  end
 
-  desc “Generate Provisioning Profiles”
-  lane :match do
+
+  desc "Generate Provisioning Profiles”
+  lane :generatePP do
+    match(git_url: "https://a-rodriguez296@bitbucket.org/a-rodriguez296/pruebamatch.git", 
+      type: "appstore",
+      app_identifier: "com.arf.poker")
+    match(git_url: "https://a-rodriguez296@bitbucket.org/a-rodriguez296/pruebamatch.git", 
+      type: "appstore",
+      app_identifier: "com.arf.poker")
+  end
+
+  desc "Download Provisioning Profiles”
+  lane :downloadPP do
     match(git_url: "https://a-rodriguez296@bitbucket.org/a-rodriguez296/pruebamatch.git", 
       type: "appstore",
       app_identifier: "com.arf.poker",
@@ -38,7 +53,7 @@ platform :ios do
       type: "appstore",
       app_identifier: "com.arf.poker",
       readonly: true)
-      gym(clean: true)
+      #gym(clean: true)
   end
 
 

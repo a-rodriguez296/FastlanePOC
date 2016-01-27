@@ -6,11 +6,16 @@ sudo gem install fastlane
 ```
 # Available Actions
 ## iOS
-### ios match
+### ios generatePP
 ```
-fastlane ios match
+fastlane ios generatePP
 ```
 Generate Provisioning Profiles
+### ios downloadPP
+```
+fastlane ios downloadPP
+```
+Download Provisioning Profiles
 ### ios snapshots
 ```
 fastlane ios snapshots
