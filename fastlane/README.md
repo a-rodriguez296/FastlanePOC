@@ -6,6 +6,16 @@ sudo gem install fastlane
 ```
 # Available Actions
 ## iOS
+### ios generatePN
+```
+fastlane ios generatePN
+```
+Generate PushNotifications p12
+### ios generateIPA
+```
+fastlane ios generateIPA
+```
+Generate IPA
 ### ios generatePP
 ```
 fastlane ios generatePP

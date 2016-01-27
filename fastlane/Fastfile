@@ -19,37 +19,44 @@ default_platform :ios
 platform :ios do
   before_all do
     # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
-    
-    
   end
 
+
+
+  desc "Generate PushNotifications p12”
+  lane :generatePN do
+    pem(generate_p12: true,
+      app_identifier: "com.arf.poker",
+      p12_password: "")
+  end 
+
   desc "Generate IPA”
-  lane :generatePP do
+  lane :generateIPA do
     match(git_url: "https://a-rodriguez296@bitbucket.org/a-rodriguez296/pruebamatch.git", 
       type: "appstore",
       app_identifier: "com.arf.poker",
       readonly: true)
-       gym(clean: true)
+    gym(clean: true)
   end
 
 
   desc "Generate Provisioning Profiles”
   lane :generatePP do
-    match(git_url: "https://a-rodriguez296@bitbucket.org/a-rodriguez296/pruebamatch.git", 
+    match(git_url: "git@bitbucket.org:a-rodriguez296/pruebamatch.git", 
       type: "appstore",
       app_identifier: "com.arf.poker")
-    match(git_url: "https://a-rodriguez296@bitbucket.org/a-rodriguez296/pruebamatch.git", 
+    match(git_url: "git@bitbucket.org:a-rodriguez296/pruebamatch.git", 
       type: "appstore",
       app_identifier: "com.arf.poker")
   end
 
   desc "Download Provisioning Profiles”
   lane :downloadPP do
-    match(git_url: "https://a-rodriguez296@bitbucket.org/a-rodriguez296/pruebamatch.git", 
+    match(git_url: "git@bitbucket.org:a-rodriguez296/pruebamatch.git", 
       type: "appstore",
       app_identifier: "com.arf.poker",
       readonly: true)
-    match(git_url: "https://a-rodriguez296@bitbucket.org/a-rodriguez296/pruebamatch.git", 
+    match(git_url: "git@bitbucket.org:a-rodriguez296/pruebamatch.git", 
       type: "appstore",
       app_identifier: "com.arf.poker",
       readonly: true)
