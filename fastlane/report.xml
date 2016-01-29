@@ -3,27 +3,22 @@
   <testsuite name="run">
     
       
-      <testcase name="0: Verifying required fastlane version" time="0.000244">
+      <testcase name="0: Verifying required fastlane version" time="0.000533">
         
       </testcase>
     
       
-      <testcase name="1: default_platform" time="0.000183">
+      <testcase name="1: default_platform" time="0.000351">
         
       </testcase>
     
       
-      <testcase name="2: match" time="4.097401">
+      <testcase name="2: match" time="33.641602">
         
       </testcase>
     
       
-      <testcase name="3: match" time="3.723422">
-        
-      </testcase>
-    
-      
-      <testcase name="4: gym" time="78.106574">
+      <testcase name="3: match" time="6.716718">
         
       </testcase>
     

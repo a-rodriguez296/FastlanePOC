@@ -22,6 +22,9 @@ platform :ios do
   end
 
 
+#ssh-keygen
+#pbcopy < ~/.ssh/id_rsa.pub
+
 
   desc "Generate PushNotifications p12”
   lane :generatePN do
@@ -32,7 +35,7 @@ platform :ios do
 
   desc "Generate IPA”
   lane :generateIPA do
-    match(git_url: "https://a-rodriguez296@bitbucket.org/a-rodriguez296/pruebamatch.git", 
+    match(git_url: "git@bitbucket.org:a-rodriguez296/pruebamatch.git", 
       type: "appstore",
       app_identifier: "com.arf.poker",
       readonly: true)
@@ -43,7 +46,7 @@ platform :ios do
   desc "Generate Provisioning Profiles”
   lane :generatePP do
     match(git_url: "git@bitbucket.org:a-rodriguez296/pruebamatch.git", 
-      type: "appstore",
+      type: "developer",
       app_identifier: "com.arf.poker")
     match(git_url: "git@bitbucket.org:a-rodriguez296/pruebamatch.git", 
       type: "appstore",
@@ -53,7 +56,7 @@ platform :ios do
   desc "Download Provisioning Profiles”
   lane :downloadPP do
     match(git_url: "git@bitbucket.org:a-rodriguez296/pruebamatch.git", 
-      type: "appstore",
+      type: "developer",
       app_identifier: "com.arf.poker",
       readonly: true)
     match(git_url: "git@bitbucket.org:a-rodriguez296/pruebamatch.git", 
