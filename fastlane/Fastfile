@@ -30,7 +30,8 @@ platform :ios do
   lane :generatePN do
     pem(generate_p12: true,
       app_identifier: "com.arf.poker",
-      p12_password: "")
+      p12_password: "",
+      development: true)
   end 
 
   desc "Generate IPA”
@@ -39,7 +40,8 @@ platform :ios do
       type: "appstore",
       app_identifier: "com.arf.poker",
       readonly: true)
-    gym(clean: true)
+    gym(clean: true,
+        scheme: "mZone Poker")
   end
 
 
